@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portifólio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="main-nav">
+        <ul class="menu">
+            <li><a href="#start" class="menu-link">Início</a></li>
+            <li><a href="#about" class="menu-link">Sobre</a></li>
+            <li><a href="#projects" class="menu-link">Projetos</a></li>
+            <li><a href="#contact" class="menu-link">Contato</a></li>
+        </ul>
+    </nav>
+
+   <main id="start" class="header">
+        <canvas id="heroCanvas"></canvas>
+        
+        <div class="header-content">
+            <h1 class="title">Guilherme Araújo</h1>
+            <p class="subtitle">Desenvolvedor Full Stack</p>
+        </div>
+    </main>
+
+    <section id="about" class="about">
+        <h2 class="about-title">Sobre Mim</h2>
+        <div class="about-box">
+            <p class="about-paragraph">Olá! Sou Guilherme, estudante de Engenharia de Software na UDF. Minha jornada na tecnologia é guiada pela mesma disciplina que aprendi no violão erudito: atenção aos detalhes, busca pela harmonia e prática constante. <br><br>
+            Assim como transformo notas em música, transformo lógica e algoritmos em soluções reais. Utilizo minha criatividade e rigor técnico para desenvolver aplicações web e sistemas eficientes em C, SQL e JavaScript.</p>
+        </div>
+    </section>
+    <section id="projects" class="projects">
+        <h2 class="projects-title">Meus Projetos</h2>
+        <div class="projects-box">
+            
+            <a href="https://github.com/Guilh3rme2007/Quiz_biblico" target="_blank" class="project-link">
+                <div class="project-card">
+                    <h4 class="project-name">Bible Quiz</h4>
+                    <p class="project-description">Um quiz interativo sobre histórias e personagens bíblicos, desenvolvido com HTML, CSS e JavaScript.</p>
+                </div>
+            </a>
+            <a href="https://github.com/Guilh3rme2007/sistema_biblioteca" target="_blank" class="project-link">
+                <div class="project-card">
+                    <h4 class="project-name">Sistema de Biblioteca</h4>
+                    <p class="project-description">Um sistema completo de uma biblioteca, utilizando a linguagem C.</p>
+                </div>
+            </a>
+            <a href="https://github.com/Guilh3rme2007/lista_de_contato" target="_blank" class="project-link">
+                <div class="project-card">
+                    <h4 class="project-name">Lista de Contatos</h4>
+                    <p class="project-description">Uma aplicação para gerenciar contatos pessoais, desenvolvida com C.</p>
+                </div>
+            </a>
+            <a href="https://github.com/Guilh3rme2007/Jogo_da_velha" target="_blank" class="project-link">
+                <div class="project-card">
+                    <h4 class="project-name">Jogo da Velha</h4>
+                    <p class="project-description">Um clássico jogo da velha para dois jogadores, implementado em C.</p>
+                </div>
+            </a>
+        </div>
+    </section>
+    <section id="contact" class="contact"> 
+        <h2 class="contact-title">Entre em Contato</h2>
+        <form id="contact-form" class="contact-form" onsubmit="sendmensage(event)">
+            <div class="name-form">
+               <label for="name">Nome:</label>
+            <input type="text" id="name" name="name" placeholder="Nome" autocomplete="off" required> 
+            </div>
+            <div class="mensage-form">
+                <label for="message">Mensagem:</label>
+                <textarea id="message" name="message" rows="4" placeholder="Digite sua mensagem aqui..." required></textarea>  
+            </div>
+            <div class="submit-form">
+                <button type="submit">Enviar</button>
+            </div>
+            
+        </form>
+    </section>
+
+    <script src="script.js"></script>
+    <script src="snake.js"></script>
+</body>
+</html>

@@ -1,0 +1,246 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+html {
+  scroll-behavior: smooth;
+}
+:root {
+  --primary-color: #4f46e5;
+  --secondary-color: #7c3aed;
+  --dark-color: #0f172a;
+  --more-dark-color: #0a0f1c;
+  --light-color: #e2e8f0;
+  --glass-bg: rgba(255, 255, 255, 0.1);
+}
+body {
+  background-color: var(--dark-color);
+  color: var(--light-color);
+}
+.main-nav {
+  position: fixed;
+  top: 0;
+  background: rgba(15, 23, 42, 0.9);
+  width: 100%;
+  z-index: 1000;
+  padding: 1rem 2rem;
+}
+.menu {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+.menu-link {
+  color: var(--light-color);
+  text-decoration: none;
+  margin: 0 1rem;
+  font-weight: 600;
+  transition: color 0.3s ease;
+  position: relative;
+  padding: 0.5rem 0;
+}
+.menu-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  transition: width 0.6s ease;
+}
+.menu-link:hover::after {
+  width: 100%;
+}
+.header {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+.title {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+.subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+
+}
+.about {
+  padding: 6rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.about-title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.about-box {
+  background: var(--glass-bg);
+  padding: 2rem;
+  max-width: 600px;
+  border-radius: 10px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(8.5px);
+  -webkit-backdrop-filter: blur(8.5px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+.about-paragraph {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--light-color);
+}
+.projects {
+  padding: 6rem 2rem;
+}
+.projects-title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.projects-box {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+}
+.project-card {
+  background: var(--glass-bg);
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(8.5px);
+  -webkit-backdrop-filter: blur(8.5px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  width: 300px;
+}
+.project-card:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+.project-name {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+.project-name:hover {
+  color: var(--secondary-color);
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.contact {
+  padding: 6rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.contact-title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 500px;
+  background: var(--glass-bg);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(8.5px);
+  -webkit-backdrop-filter: blur(8.5px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+.name-form, .mensage-form {
+  display: flex;
+  flex-direction: column;
+}
+label {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+input, textarea {
+  padding: 0.75rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.18);
+  color: var(--light-color);
+}
+input:focus, textarea:focus {
+  outline: 2px solid var(--primary-color);
+}
+.submit-form {
+  display: flex;
+  justify-content: center;
+}
+button {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+button:hover {
+  background: var(--secondary-color);
+}   
+/* Atualize o Header para posicionar o canvas */
+.header {
+  position: relative; /* Necessário para o canvas absoluto funcionar */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Impede barras de rolagem se a cobrinha sair um pouco */
+  background-color: #0d1117; /* Cor de fundo escura (estilo GitHub Dark) */
+}
+
+/* Estilo do Canvas de Fundo */
+#heroCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* Fica atrás do texto */
+  opacity: 0.8; /* Leve transparência para não brigar com o texto */
+}
+
+/* O conteúdo de texto deve ficar na frente */
+.header-content {
+  z-index: 2; /* Fica na frente do canvas */
+  text-align: center;
+  /* Adiciona um sombreamento no texto para leitura melhor sobre a cobrinha */
+  text-shadow: 0 4px 10px rgba(0,0,0,0.8); 
+}
+
+.title {
+  font-size: 4rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  color: #a3b3bc; /* Um cinza azulado claro */
+  font-weight: 300;
+}
