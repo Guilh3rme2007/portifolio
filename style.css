@@ -57,22 +57,45 @@ body {
   width: 100%;
 }
 .header {
+  position: relative; 
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  text-align: center;
+  overflow: hidden; 
+  background-color: #0d1117; 
 }
-.title {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
-.subtitle {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
 
+#heroCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; 
+  opacity: 0.8; 
 }
+
+
+.header-content {
+  z-index: 2; 
+  text-align: center;
+  text-shadow: 0 4px 10px rgba(0,0,0,0.8); 
+}
+
+.title {
+  font-size: 4rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  color: #a3b3bc; 
+  font-weight: 300;
+}
+
 .about {
   padding: 6rem 2rem;
   display: flex;
@@ -202,45 +225,3 @@ button {
 button:hover {
   background: var(--secondary-color);
 }   
-/* Atualize o Header para posicionar o canvas */
-.header {
-  position: relative; /* Necessário para o canvas absoluto funcionar */
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden; /* Impede barras de rolagem se a cobrinha sair um pouco */
-  background-color: #0d1117; /* Cor de fundo escura (estilo GitHub Dark) */
-}
-
-/* Estilo do Canvas de Fundo */
-#heroCanvas {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1; /* Fica atrás do texto */
-  opacity: 0.8; /* Leve transparência para não brigar com o texto */
-}
-
-/* O conteúdo de texto deve ficar na frente */
-.header-content {
-  z-index: 2; /* Fica na frente do canvas */
-  text-align: center;
-  /* Adiciona um sombreamento no texto para leitura melhor sobre a cobrinha */
-  text-shadow: 0 4px 10px rgba(0,0,0,0.8); 
-}
-
-.title {
-  font-size: 4rem;
-  font-weight: 700;
-  color: #ffffff;
-  margin-bottom: 0.5rem;
-}
-
-.subtitle {
-  font-size: 1.5rem;
-  color: #a3b3bc; /* Um cinza azulado claro */
-  font-weight: 300;
-}
